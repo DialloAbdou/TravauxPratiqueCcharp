@@ -44,4 +44,27 @@ public class Debutant
             (myIntConverted, myBoolConverted, myStringConverted);
     }
 
+    public static string CheckAge(int age)
+    {
+        // Ne pas toucher cette ligne.
+        string message = "";
+        if(age<18)
+        {
+            message ="Vous êtes mineure"
+        }else if(age<20 && age >=18)
+        {
+            message ="Vous êtes tout juste majeur"
+        }else
+        {
+           message= "Vous êtes majeure"
+        }
+
+        // Ecrire la condition "if" qui permet de répondre à l'exercice.
+        // l'âge est stockée dans la variable "age".
+        // Vous devez enregistrer le message dans la variable "message".
+
+        // Ne pas toucher ces lignes.
+        Console.WriteLine(message);
+        return message;
+    }
 }
