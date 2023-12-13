@@ -9,10 +9,10 @@ public class Debutant
     public static Tuple<string, int, float, bool, string[]> Main()
     {
         // TODO
-        var name = "John"
-        var age =25
-        var weight = (float) 78.4
-        var isHuman =true
+        var name = "John";
+        var age = 25;
+        var weight = (float)78.4;
+        var isHuman = true;
         var friends = new string[] { "paul", "Sam", "David" };
 
             return new Tuple<string, int, float, bool, string[]>
@@ -30,7 +30,7 @@ public class Debutant
         Console.WriteLine(res);
     }
 
-    public static Tuple<int, bool, string> Main()
+    public static Tuple<int, bool, string> GetTuple()
     {
         var myInt = "17";
         var myBool = "False";
@@ -50,13 +50,13 @@ public class Debutant
         string message = "";
         if(age<18)
         {
-            message ="Vous êtes mineure"
-        }else if(age<20 && age >=18)
+            message = "Vous êtes mineure";
+        }else if(age< 20 )
         {
-            message ="Vous êtes tout juste majeur"
+            message = "Vous êtes tout juste majeur";
         }else
         {
-           message= "Vous êtes majeure"
+            message = "Vous êtes majeure";
         }
 
         // Ecrire la condition "if" qui permet de répondre à l'exercice.
@@ -66,5 +66,27 @@ public class Debutant
         // Ne pas toucher ces lignes.
         Console.WriteLine(message);
         return message;
+    }
+
+    public string GetFizzBuzz(int valeur)
+    {
+        string resultat = string.Empty; 
+     
+        if(valeur %3 == 0)
+        {
+            resultat+= "Fizz";
+        }
+        if (valeur % 5 == 0)
+        {
+            resultat+= "Buzz";
+
+        }
+        if(string.IsNullOrEmpty(resultat)) 
+        {
+            resultat = resultat += valeur.ToString();
+        }
+        return resultat;
+       
+      
     }
 }
