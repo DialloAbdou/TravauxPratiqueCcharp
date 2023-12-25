@@ -170,20 +170,32 @@ public class Debutant
             if (o.GetType().Equals(typeof(string)))
             {
                 Console.WriteLine("C'est une String");
-            }else if (o.GetType().Equals(typeof(int)))
+            }
+            else if (o.GetType().Equals(typeof(int)))
             {
                 Console.WriteLine("C'est un int");
-            } else if(o.GetType().Equals(typeof(float))){
+            }
+            else if (o.GetType().Equals(typeof(float)))
+            {
                 Console.WriteLine("C'est un Float");
 
-            }else if (o.GetType().Equals(typeof(Boolean))){
+            }
+            else if (o.GetType().Equals(typeof(Boolean)))
+            {
                 Console.WriteLine("C'est un Boolean");
 
-            } else { Console.WriteLine("je connais pas ce type"); }
+            }
+            else { Console.WriteLine("je connais pas ce type"); }
         }
     }
 
-    public static bool ?FlipCoin(int min = 0, int max = 100)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="min"></param>
+    /// <param name="max"></param>
+    /// <returns></returns>
+    public static bool? FlipCoin(int min = 0, int max = 100)
     {
         var rnd = new Random().Next(min, max);
         if (rnd < 50)
@@ -197,6 +209,27 @@ public class Debutant
         else
         {
             return null;
+        }
+    }
+    /// <summary>
+    /// Utilisation Hasvalue
+    /// </summary>
+    /// <param name="val"></param>
+    public static void DisplayInfos(List<int?> val)
+    {
+        foreach (var v in val)
+        {
+            //if (!v.HasValue)
+            //{
+            //    Console.WriteLine(0);
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine(v);
+
+            //}
+            Console.WriteLine(v ?? 0);
         }
     }
 

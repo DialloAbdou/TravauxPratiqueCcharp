@@ -12,7 +12,23 @@ Console.WriteLine("Veillez Saisir un chiffre!");
 //var valeu = Debutant.CountLessThan(arr, 2);
 //Console.WriteLine(valeu);
 //Debutant.Fibonacci(5);
-Debutant.DisplayInformation(5);
+//Debutant.DisplayInformation(5);
+
+List<int?> elem = new List<int?>()
+            {
+                0,
+                5,
+                null,
+                48,
+                31,
+                null,
+                91,
+                77,
+                12,
+                21,
+                null
+            };
+Debutant.DisplayInfos(elem);
 Console.ReadLine();
 
 
