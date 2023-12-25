@@ -7,7 +7,7 @@ namespace SectionTestUnitaire
         private Debutant _debutantSession = new Debutant();
         public DebutantTest()
         {
-            
+
         }
 
         [Fact]
@@ -16,7 +16,7 @@ namespace SectionTestUnitaire
             //Arange
 
             //Act
-            var result =  _debutantSession.GetFizzBuzz(1);
+            var result = _debutantSession.GetFizzBuzz(1);
             //Assertion
             result.Should().Be("1");
         }
@@ -52,6 +52,43 @@ namespace SectionTestUnitaire
             var result = _debutantSession.GetFizzBuzz(15);
             //Assertion
             result.Should().Be(fizz);
+        }
+
+        [Fact]
+        public void RemoveAtPosition_Should_Be_Deleted_the_First_Caractere_of_Strin_when_index_Less_OR_Equal_to_Zero()
+        {
+            //Arange
+            var fizz = "Fizz";
+            //Act
+            var result = _debutantSession.RemoveAtPosition(fizz, 0);
+            //Assertion
+            result.Should().Be("izz");
+        }
+
+        [Fact]
+        public void RemoveAtPosition_Should_Be_Deleted_the_Last_Caractere_of_Strin_when_indexe_is_More_than_String_Length()
+        {
+            //Arange
+            var fizz = "Fizz";
+            int index = fizz.Length;
+            //Act
+            var result = _debutantSession.RemoveAtPosition(fizz, index);
+            //Assertion
+            result.Should().Be("Fiz");
+        }
+
+        [Fact]
+        public void RemoveAtPosition_Should_Be_Deleted_Caractere_AtPosition_String()
+        {
+            //Arange
+            var fizz = "Fizz";
+            int index = 1;
+            //Act
+            var result = _debutantSession.RemoveAtPosition(fizz, index);
+            //Assertion
+            result.Should().Be("Fzz");
+
+
         }
     }
 }
