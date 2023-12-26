@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Authentication.ExtendedProtection;
+using System.Transactions;
 
 public class Debutant
 {
@@ -231,6 +232,52 @@ public class Debutant
             //}
             Console.WriteLine(v ?? 0);
         }
+
+
     }
+    /// <summary>
+    /// Compter le nmbre de voyelle
+    /// dans une chaine.
+    /// </summary>
+    /// <param name="word"></param>
+    /// <returns></returns>
+    public int HowManyVowels(string word)
+    {
+        int cpte = 0;
+        char[] voyelles = new char[] { 'a', 'e', 'i', 'o', 'u', 'y' };
+        if(!string.IsNullOrEmpty(word))
+        {
+            for(int i = 0;i<word.Length;i++)
+            {
+                if (voyelles.Contains(word[i]))
+                {
+                    cpte++;
+                }
+            }
+        }
+        return cpte;
+    }
+    public static void methodeJoin(string word)
+    {
+        var motSlipt = string.Join('*', word.Split(' '));
+        Console.WriteLine(motSlipt);
+
+        //foreach(var m in motSlipt)
+        //{
+        //    Console.WriteLine(m);
+        //}
+    }
+    public static void methodeTest()
+    {
+        List<string> words = new List<string>()
+        {
+            "Banane","Orange","Mangue"
+        };
+
+        var motJoin = string.Join("", words);
+
+        Console.WriteLine(motJoin);
+    }
+
 
 }

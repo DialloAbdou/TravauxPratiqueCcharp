@@ -89,6 +89,28 @@ namespace SectionTestUnitaire
             result.Should().Be("Fzz");
 
 
+
+        }
+
+        [Fact]
+        public void HowManyVowels_Should_when_Zero_String_Is_EmptyOrNull()
+        {
+            //Assertion
+            _debutantSession.HowManyVowels("").Should().Be(0);
+
+
+        }
+
+        [Fact]
+        public void HowManyVowels_Should_Count_Vowels_When_string_Contains_Voyelle()
+        {
+            //Arrane
+            var chaine = "Bonjour";
+            //Act
+            var result = _debutantSession.HowManyVowels(chaine);
+            // Assertion
+            result.Should().Be(3);
+
         }
     }
 }

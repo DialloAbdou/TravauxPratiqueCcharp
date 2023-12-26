@@ -14,21 +14,24 @@ Console.WriteLine("Veillez Saisir un chiffre!");
 //Debutant.Fibonacci(5);
 //Debutant.DisplayInformation(5);
 
-List<int?> elem = new List<int?>()
-            {
-                0,
-                5,
-                null,
-                48,
-                31,
-                null,
-                91,
-                77,
-                12,
-                21,
-                null
-            };
-Debutant.DisplayInfos(elem);
-Console.ReadLine();
+//List<int?> elem = new List<int?>()
+//            {
+//                0,
+//                5,
+//                null,
+//                48,
+//                31,
+//                null,
+//                91,
+//                77,
+//                12,
+//                21,
+//                null
+//            };
+//Debutant.DisplayInfos(elem);
+//Debutant.HowManyVowels("Bonjour je m'appelle Jessy");
+Debutant.methodeJoin("Bonjour abdou");
+Debutant.methodeTest();
+Console.ReadLine(); ;
 
 
