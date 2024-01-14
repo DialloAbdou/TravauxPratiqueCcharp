@@ -244,10 +244,10 @@ public class Debutant
     public int HowManyVowels(string word)
     {
         int cpte = 0;
-        char[] voyelles = new char[] { 'a', 'e', 'i', 'o', 'u', 'y' };
-        if(!string.IsNullOrEmpty(word))
+        var voyelles = new char[] { 'a', 'e', 'i', 'o', 'u', 'y' };
+        if (!string.IsNullOrEmpty(word))
         {
-            for(int i = 0;i<word.Length;i++)
+            for (int i = 0; i < word.Length; i++)
             {
                 if (voyelles.Contains(word[i]))
                 {
@@ -256,6 +256,7 @@ public class Debutant
             }
         }
         return cpte;
+
     }
     public static void methodeJoin(string word)
     {
@@ -280,4 +281,6 @@ public class Debutant
     }
 
 
+
 }
+

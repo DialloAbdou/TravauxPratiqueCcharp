@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Intermediaire;
+
 Console.WriteLine("Veillez Saisir un chiffre!");
 //var chaine = Console.ReadLine();
 
@@ -30,8 +32,15 @@ Console.WriteLine("Veillez Saisir un chiffre!");
 //            };
 //Debutant.DisplayInfos(elem);
 //Debutant.HowManyVowels("Bonjour je m'appelle Jessy");
-Debutant.methodeJoin("Bonjour abdou");
-Debutant.methodeTest();
+//Debutant.methodeJoin("Bonjour abdou");
+//Debutant.methodeTest();
+
+// Niveau Intermediaire
+int[] myArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+
+var myNewArray = NivIntermediaire.PairAndSquared(myArray);
+foreach (int i in myNewArray)
+Console.WriteLine(i);
 Console.ReadLine(); ;
 
 
