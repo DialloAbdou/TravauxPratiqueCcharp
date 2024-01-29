@@ -36,11 +36,21 @@ Console.WriteLine("Veillez Saisir un chiffre!");
 //Debutant.methodeTest();
 
 // Niveau Intermediaire
-int[] myArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+//int[] myArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
 
-var myNewArray = NivIntermediaire.PairAndSquared(myArray);
-foreach (int i in myNewArray)
-Console.WriteLine(i);
-Console.ReadLine(); ;
+//var myNewArray = NivIntermediaire.PairAndSquared(myArray);
+//foreach (int i in myNewArray)
+//utilisation
+//var result = NivIntermediaire.Add(1, 2);
+
+//var sentence = "Hello my name is David";
+//NivIntermediaire.getSentence(sentence, "Julia");
+//string s1 = "World";
+//string s2 = "Hello";
+// Console.WriteLine( NivIntermediaire.PermuteChaine(s1, s2));
+string word = "Engage le jeu, que je le gagne";
+Console.WriteLine( NivIntermediaire.IsPalindome(word));
+//Console.WriteLine(result.ToString());
+Console.ReadLine(); 
 
 
