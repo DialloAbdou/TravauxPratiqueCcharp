@@ -63,12 +63,12 @@ namespace Intermediaire
 
         public static string PermuteChaine(string s1, string s2)
         {
-            SwitchString( ref s1,ref  s2);
+            SwitchString(ref s1, ref s2);
 
             return $"{s1} {s2}";
         }
 
-        private static void SwitchString( ref string s1, ref string s2)
+        private static void SwitchString(ref string s1, ref string s2)
         {
             string m = s1;
             s1 = s2;
@@ -81,17 +81,52 @@ namespace Intermediaire
 
             var wordSplit = word.Split(' ', ',');
             var wordTab = string.Join("", wordSplit);
-            var firstWord = wordTab.Substring(0, wordTab.Length/2).ToUpper();
+            var firstWord = wordTab.Substring(0, wordTab.Length / 2).ToUpper();
 
             // secondPartie
             var reversWord = wordTab.Reverse().ToArray();
             var reversWordString = new String(reversWord);
             var secondPartie = reversWordString.Substring(0, reversWordString.Length / 2).ToUpper();
             Console.WriteLine(secondPartie);
-           return firstWord.Equals(secondPartie) ;
+            return firstWord.Equals(secondPartie);
         }
 
-     }
+        public static Dictionary<int, int> StoreAndCount(int[] tabOCc)
+        {
+            int j = 0; int nbre = 0; int i = 0;
+            Dictionary<int, int> StoreDico = new Dictionary<int, int>();
+            while (j < tabOCc.Length)
+            {
+
+                while (i < tabOCc.Length)
+                {
+                    if (tabOCc[j] == tabOCc[i])
+                    {
+                        nbre++;
+                    }
+                    i++;
+                }
+                if (i == tabOCc.Length)
+                {
+                    if (!StoreDico.ContainsKey(tabOCc[j]))
+                    {
+                        StoreDico.Add(tabOCc[j], nbre);
+                    }
+                    i = 0;
+                    nbre = 0;
+                }
+                j++;
+            }
+
+            return StoreDico;
+        }
+
+        public static Dictionary<int, int> StoreAndCountLInq(int[] tabOCc)
+        {
+            var resLinq = tabOCc.ToLookup(x => x, x => tabOCc.Count(y => y == x));
+            return resLinq.ToDictionary(x => x.Key, x => x.First()); ;
+        }
+    }
 
 
 }

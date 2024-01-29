@@ -48,9 +48,16 @@ Console.WriteLine("Veillez Saisir un chiffre!");
 //string s1 = "World";
 //string s2 = "Hello";
 // Console.WriteLine( NivIntermediaire.PermuteChaine(s1, s2));
-string word = "Engage le jeu, que je le gagne";
-Console.WriteLine( NivIntermediaire.IsPalindome(word));
+//string word = "Engage le jeu, que je le gagne";
+//Console.WriteLine( NivIntermediaire.IsPalindome(word));
 //Console.WriteLine(result.ToString());
+int[] tabOCc = new int[] { 1, 2, 3, 1, 1, 1, 2, 5 };
+//var dicOcc = NivIntermediaire.StoreAndCount(tabOCc);
+var dicOcc = NivIntermediaire.StoreAndCountLInq(tabOCc);
+foreach (KeyValuePair<int, int> occ in dicOcc)
+{
+    Console.WriteLine("Clé: {0}, Valeur: {1} ",occ.Key, occ.Value);
+}
 Console.ReadLine(); 
 
 
