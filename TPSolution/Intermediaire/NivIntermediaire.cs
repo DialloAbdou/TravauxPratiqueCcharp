@@ -91,6 +91,13 @@ namespace Intermediaire
             return firstWord.Equals(secondPartie);
         }
 
+        /// <summary>
+        /// elle permet de compter 
+        /// nombre d'occurence dans un tableau 
+        /// pour  nous retourner un dictionnaire
+        /// </summary>
+        /// <param name="tabOCc"></param>
+        /// <returns></returns>
         public static Dictionary<int, int> StoreAndCount(int[] tabOCc)
         {
             int j = 0; int nbre = 0; int i = 0;
@@ -121,11 +128,41 @@ namespace Intermediaire
             return StoreDico;
         }
 
+        /// <summary>
+        /// elle retourne un dictionnaire en comptant les nombre d'occurence
+        /// dans le tableau 
+        /// </summary>
+        /// <param name="tabOCc"></param>
+        /// <returns></returns>
         public static Dictionary<int, int> StoreAndCountLInq(int[] tabOCc)
         {
             var resLinq = tabOCc.ToLookup(x => x, x => tabOCc.Count(y => y == x));
             return resLinq.ToDictionary(x => x.Key, x => x.First()); ;
         }
+
+        /// <summary>
+        /// Elle retourne une date
+        /// sous la forme "Shorte Date"
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static string ToShortDate(DateTime d)
+        {
+            DateTime date = d.Date;
+            return date.ToString("d");
+        }
+
+        /// <summary>
+        /// elle retour une date sour forme logue
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static string ToFrenchFullDate(DateTime d)
+        {
+            DateTime  date = d.Date;
+            return date.ToString("MM/dd/yyyy HH:mm");
+        }
+
     }
 
 
