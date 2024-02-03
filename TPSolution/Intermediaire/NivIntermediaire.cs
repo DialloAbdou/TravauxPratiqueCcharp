@@ -2,10 +2,62 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Intermediaire
 {
+
+    public class Score
+    {
+        public int userId { get; set; }
+        public int scoreValue { get; set; }
+
+        public Score(int _userId, int _scoreValue)
+        {
+            userId = _userId;
+            scoreValue = _scoreValue;
+        }
+    }
+
+    public class ScoreManager
+    {
+        private Score[] _scores;
+
+        public ScoreManager(List<Score> scores)
+        {
+            this._scores = scores.ToArray();
+        }
+
+        public List<Score> GetScores()
+        {
+            return _scores.ToList();
+        }
+
+        public int GetLastScore()
+        {
+            var valeurMax = _scores.Last().scoreValue;
+            return valeurMax;
+        }
+        public int GetHighScore()
+        {
+            return _scores.Max(comparer => comparer.scoreValue);
+        }
+        //GetHighScore
+
+        public List<int> GetTop3OfUser(int id)
+        {
+            var myScore = _scores
+                .Where(s => s.userId == id)
+                .Take(3)
+                .Select(v => v.scoreValue).
+                OrderByDescending(c => c)
+                .ToList();
+            return myScore;
+        }
+
+    }
 
     public static class Helper
     {
@@ -23,6 +75,15 @@ namespace Intermediaire
 
     public class NivIntermediaire
     {
+        [Flags]
+        enum Names
+        {
+            Albert = 1,
+            Alice =2,
+            Robert =3,
+            David =4,
+            Cynthia =5
+        }
         /// <summary>
         /// le moyen de filtrer les nombre paires
         /// la variable
@@ -159,10 +220,55 @@ namespace Intermediaire
         /// <returns></returns>
         public static string ToFrenchFullDate(DateTime d)
         {
-            DateTime  date = d.Date;
+            DateTime date = d.Date;
             return date.ToString("MM/dd/yyyy HH:mm");
         }
+        public static void getValeur()
+        {
+            var name =  Names.Alice | Names.Robert;
 
+            Console.WriteLine(name);
+        }
+
+        public static void CleanPhoneNumber(string sentence)
+        {
+            string pattern = @"(0|\\+33|0033)[1-9][0-9]{8}";
+
+            Regex defaultRegex = new Regex(pattern, RegexOptions.Compiled);
+
+            var matches = defaultRegex.Replace(sentence, string.Empty);
+
+            Console.WriteLine($"{matches}");
+
+        }
+
+        public static int[] GiveChange(int x, int y)
+        {
+            int[] tableauEchange = new int[] { 100, 50, 20, 10, 5, 2, 1 };
+            List<int> tableauRendu = new List<int>();
+            int i = 0; int rest = 0; int j = 0;
+            if(x==y)
+            {
+                return tableauEchange;
+            }
+            if(y > x)
+            {
+                rest = y - x;
+                while(i< tableauEchange.Length && rest!=0)
+                {
+                    if (tableauEchange[i] <= rest)
+                    {
+                        rest = rest - tableauEchange[i];
+                        tableauRendu.Add(tableauEchange[i]);
+                         
+                    }
+                    i++ ; 
+
+                }
+            }
+
+            return tableauRendu.ToArray();
+        }
     }
 
 
