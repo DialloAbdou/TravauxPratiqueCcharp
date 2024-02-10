@@ -64,15 +64,22 @@ using Intermediaire;
 //Console.WriteLine($"{NivIntermediaire.ToFrenchFullDate(date1)}");
 //NivIntermediaire.getValeur();
 //string sentence = "Bonjour, appelle moi au 0836656565";
-int x = 44, y = 100;
-var rendu = NivIntermediaire.GiveChange(x, y);
+//int x = 44, y = 100;
+//var rendu = NivIntermediaire.GiveChange(x, y);
 
-foreach (var item in rendu)
-{
-   Console.WriteLine(item);
-}
+//foreach (var item in rendu)
+//{
+//   Console.WriteLine(item);
+//}
 //NivIntermediaire.CleanPhoneNumber(sentence);
 
+string[] words = new string[] { "the", "dog", "got", "the", "bone" };
+
+var tabWords = NivIntermediaire.CountFrequence(words);
+foreach (var n in tabWords)
+{
+    Console.WriteLine(n);
+}
 Console.ReadLine(); 
 
 
